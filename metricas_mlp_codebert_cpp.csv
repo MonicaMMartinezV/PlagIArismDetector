@@ -1,0 +1,2 @@
+accuracy,precision,recall,f1,roc_auc,pr_auc,best_threshold,model_name,max_length,batch_size_embeddings,mlp_batch_size,epochs,max_positive_pairs_per_uid,negative_multiplier,hard_negatives_per_code,top_k_candidates
+0.9616666666666667,0.973860681538251,0.9488,0.9611670156007294,0.9907099444444444,0.9923384945980281,0.5469154,neulab/codebert-cpp,256,16,128,40,100,1,5,50
