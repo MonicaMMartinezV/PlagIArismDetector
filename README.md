@@ -26,7 +26,20 @@ El dataset cuenta aproximadamente con:
 
 Aunque AI-SOCO fue creado para identificación de autoría, en este proyecto se adaptó para una tarea de comparación entre pares de código.
 
+### Justificación de Dataset
+Nuestra construcción del modelo fue sustentada por diferentes artículos de los cuáles sacamos nuestras métricas, pero antes de construir nuestro modelo primero tuvimos que conseguir un dataset que tuviera la información necesaria, al final decidimos utilizar AI-SOCO, desarrollado por la organización PAN, algunas de las razones por la que escogimos este dataset fueron:
+
+- Identificar al autor de un fragmento de código fuente a partir de su estilo de programación (Authorship Attribution).
+- Origen de los datos: Los códigos fueron recopilados de envíos aceptados en la plataforma de programación competitiva Codeforces, garantizando que fueran programas correctos y compilables.
+- Tamaño del dataset: Contiene 100,000 programas en C++ escritos por 1,000 autores, con 100 soluciones por cada autor
+- Estructura: El conjunto se divide en entrenamiento (50,000), desarrollo (25,000) y prueba (25,000) ejemplos.
 ---
+# Justificación Tecnologías
+## CodeBERT CPP
+Durante nuestra investigación, un factor en común en 3/6 de nuestros artículos fue el uso de CodeBERT,  un "traductor inteligente" que puede leer código de programación y comprender qué hace, relacionándolo con descripciones escritas en lenguaje humano, en los artículos que investigamos CodeBERT fue utilizado como una herramienta de apoyo para la extracción de elementos semánticos, pero cabe aclarar utilizamos una version llamada codebert-cpp, ya que el codebert original no esta entrenado C++.
+
+## Multi Layer Perceptron
+En base a Ramachandra. et.al. (2026) [1] el modelo con mejor desempeño es la combinación de modelos MLP, XGboost, Random Forest y SVM. Pero entre estos modelos, el de mejor desempeño entre estos el MLP o  Multi Layer Perceptron.
 
 ## Funcionamiento general
 
@@ -102,3 +115,20 @@ Estos resultados muestran que el modelo logró un desempeño alto y balanceado p
 * Matplotlib
 
 ---
+
+# Referencias
+[1] A. Ramachandra, S. Chaudhary, J. Tran, R. Desai, A. Pang, and M. Salloum, “Detecting AI-Generated Code in Introductory Programming Courses,” Proceedings of the 57th ACM Technical Symposium on Computer Science Education V.1, pp. 894–900, Feb. 2026, doi: 10.1145/3770762.3772522. Available: https://dl.acm.org/doi/10.1145/3770762.3772522.
+
+[2] D. Álvarez-Fidalgo and F. Ortin, “CLAVE: A deep learning model for source code authorship verification with contrastive learning and transformer encoders,” Information Processing & Management, vol. 62, no. 3, p. 104005, May 2025, doi: 10.1016/j.ipm.2024.104005. Available: https://www.sciencedirect.com/science/article/pii/S0306457324003649?via%3Dihub.
+
+[3] G. Boukili, S. EL Garouani, and J. Riffi, “A dataset for human-written and AI-generated code source classification,” Data in Brief, vol. 65, p. 112527, Apr. 2026, doi: 10.1016/j.dib.2026.112527. Available: https://www.sciencedirect.com/science/article/pii/S2352340926000806?via%3Dihub. 
+
+[4] M. Hoq et al., “Detecting ChatGPT-Generated Code Submissions in a CS1 Course Using Machine Learning Models,” Proceedings of the 55th ACM Technical Symposium on Computer Science Education V. 1, pp. 526–532, Mar. 2024, doi: 10.1145/3626252.3630826. Available: https://dl.acm.org/doi/10.1145/3626252.3630826. 
+
+[5] P. T. Nguyen, J. Di Rocco, C. Di Sipio, R. Rubei, D. Di Ruscio, and M. Di Penta, “GPTSniffer: A CodeBERT-based classifier to detect source code written by ChatGPT,” Journal of Systems and Software, vol. 214, p. 112059, Aug. 2024, doi: 10.1016/j.jss.2024.112059. Available: https://www.sciencedirect.com/science/article/pii/S0164121224001043?via%3Dihub.
+
+[6] T. Sağlam, S. Hahner, L. Schmid, and E. Burger, “Automated Detection of AI-Obfuscated Plagiarism in Modeling Assignments,” Proceedings of the 46th International Conference on Software Engineering: Software Engineering Education and Training, pp. 297–308, Apr. 2024, doi: 10.1145/3639474.3640084. Available: https://dl.acm.org/doi/10.1145/3639474.3640084.
+
+[7] AliOsm. (s. f.). GitHub - AliOsm/AI-SOCO: Official FIRE 2020 Authorship Identification of SOurce COde (AI-SOCO) task repository containing dataset, evaluation tools and baselines. GitHub. https://github.com/AliOsm/AI-SOCO/tree/master
+
+[8] neulab/codebert-cpp · Hugging Face. (2023, 10 febrero). https://huggingface.co/neulab/codebert-cpp/
