@@ -82,6 +82,13 @@ La versión final del modelo combina:
 El MLP utiliza capas densas, activación ReLU, Batch Normalization, Dropout y optimización con AdamW.
 
 ---
+## Justificación de Métricas Utilizadas
+En base a papeles escritos por la Karlsruhe Institute of Technology (KIT), la University of California Riverside y la Università degli studi dell’Aquila, determinamos estas 4 métricas para poder medir el rendimiento de nuestro modelo:
+- Accuracy: Porcentaje total de predicciones correctas.
+- Recall: Capacidad para encontrar los casos positivos reales.
+- Precisión: Proporción de positivos predichos que son correctos.
+- F1 Score: Balance entre precisión y recall.
+
 
 ## Resultados
 
